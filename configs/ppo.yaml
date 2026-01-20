@@ -1,0 +1,13 @@
+ppo:
+  total_timesteps: 20000000
+  n_envs: 4096
+  rollout_length: 32
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  lr: 3.0e-4
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 1.0
+notes:
+  - "Tune reward weights first; keep PPO defaults stable."

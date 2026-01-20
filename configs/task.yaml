@@ -1,0 +1,30 @@
+task:
+  name: humanoid_power_kick
+  horizon: 600
+
+termination:
+  min_base_height: 0.75
+  min_up_dot: 0.55
+  max_steps: 600
+
+reward:
+  weights:
+    w_power: 10.0
+    w_alive: 1.0
+    w_upright: 1.0
+    w_approach: 0.2
+    w_ang_vel: 0.05
+    w_action: 0.01
+  params:
+    energy_log_k: 1.0
+    v_min_contact: 0.5
+    approach_alpha: 6.0
+    upright_min: 0.6
+
+reset_randomization:
+  ball:
+    x_range: [0.6, 1.0]
+    y_range: [-0.2, 0.2]
+  humanoid:
+    joint_noise_std: 0.02
+    yaw_range: [-0.2, 0.2]
